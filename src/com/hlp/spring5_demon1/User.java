@@ -8,5 +8,6 @@ public class User {
     public void add(){
         System.out.println("add...");//啊啦啦啦啦啦...
         System.out.println("hello git2");
+        System.out.println("hello git3");
     }
 }
