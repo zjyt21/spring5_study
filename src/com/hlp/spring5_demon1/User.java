@@ -6,6 +6,6 @@ package com.hlp.spring5_demon1;
  */
 public class User {
     public void add(){
-        System.out.println("add...");//啊啦啦啦啦啦
+        System.out.println("add...");//啊啦啦啦啦啦...
     }
 }
