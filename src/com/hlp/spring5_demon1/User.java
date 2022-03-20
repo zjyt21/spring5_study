@@ -9,5 +9,6 @@ public class User {
         System.out.println("add...");//啊啦啦啦啦啦...
         System.out.println("hello git2");
         System.out.println("hello git3");
+        System.out.println("hello git4");
     }
 }
