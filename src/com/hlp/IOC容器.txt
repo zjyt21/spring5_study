@@ -1,0 +1,32 @@
+IOC容器：
+    (1)IOC底层原理
+    (2)IOC接口（BeanFactory）
+    (3)IOC操作Bean管理（基于xml）
+    (4)IOC操作Bean管理（基于注解）
+
+1.什么是IOC（Inversion of control，控制反转）：
+    (1)控制反转，把对象的创建和对象之间的调用过程，交给Spring进行管理
+    (2)使用IOC的目的：降低耦合度
+
+2.IOC底层原理
+    (1)xml解析、工厂模式、反射
+
+    IOC过程：第一步，xml配置文件，配置创建的对象<bean id="dao" class="com.hlp.spring5_demon1.User"></bean>
+            第二步，有service类和dao类，创建工厂类从service中调用dao类的方法
+                    class UserFactory{
+                        public static UserDao getDao(){
+                            String classValue = class属性值;//1.xml解析
+                            Class clazz = Class.forName(classValue);//2.通过反射创建对象
+                            return (UserDao)clazz.newInstance();
+                        }
+                    }
+
+3.IOC接口
+    (1)IOC思想基于IOC容器完成，IOC容器底层就是对象工厂
+    (2)Spring提供IOC容器实现两种方式：（两个接口）
+        [1]BeanFactory:IOC容器基本实现，是Spring内部的使用接口，不提供开发人员进行使用
+
+        [2]ApplicationContext:BeanFactory接口的子接口，提供更多更强大的功能，一般由开发人员使用
+    (3)
+
+
