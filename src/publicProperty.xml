@@ -13,7 +13,7 @@
         <value>九阳神功</value>
     </util:list>
     <!--2.提取list集合类型属性注入使用-->
-    <bean id="book" class="com.hlp.spring5_demon2.collectiontype.Book">
+    <bean id="book" class="com.hlp.spring5_demon2.collectiontype.Book" scope="prototype">
         <property name="list" ref="bookList"></property>    <!--ref中填写公共集合的id值-->
     </bean>
 </beans>
