@@ -24,8 +24,57 @@ IOC容器：
 3.IOC接口
     (1)IOC思想基于IOC容器完成，IOC容器底层就是对象工厂
     (2)Spring提供IOC容器实现两种方式：（两个接口）
-        [1]BeanFactory
-        [2]ApplicationContext
-    (3)
-    (1)
+        [1]BeanFactory:IOC容器基本实现，是Spring内部的使用接口，不提供开发人员进行使用
+            加载配置文件时候不会创建对象，而是在获取对象的时候才去创建
+        [2]ApplicationContext:BeanFactory接口的子接口，提供更多更强大的功能，一般由开发人员使用
+            加载配置文件的时候就会创建对象
+    (3)ApllicationContext的实现类
+        FileSystemXmlApplicationContext:盘符路径，全路径
+        ClassPathXmlApplicationContext:类路径，src下
 
+4.IOC操作Bean管理
+    (1)什么是Bean管理
+        Bean管理指的是两个操作
+        [1]Spring创建对象
+        [2]Spring注入属性
+    (2)Bean管理操作有两种方式
+        [1]基于xml配置文件方式实现
+        [2]基于注解方式实现
+
+    IOC操作Bean管理（基于xml方式）
+        (1)基于xml方式创建对象
+            <!--配置User对象创建-->
+            <bean id="user" class="com.hlp.spring5_demon1.User"></bean>
+            [1]在spring配置文件中，使用bean标签，标签里面添加对应属性，就可以实现对象创建
+            [2]在bean标签，常用属性的含义
+                id：别名，唯一标识
+                class：类全路径（包和类的路径）
+                name:与id作用相同，但可以加一些特殊符号，现在不常用，基本用id
+            [3]创建对象时候，默认也是执行无参数构造方法完成对象创建
+        (2)基于xml方式注入属性
+            [1]DI：依赖注入，就是注入属性。是IOC的一种具体实现，表示依赖注入，但注入属性需要在创建对象的基础之上完成
+        (3)[1]第一种注入方式：使用set方法进行注入
+                创建类，定义属性和对应的set方法
+                在spring配置文件中先配置对象的创建，再配置属性注入
+           [2]第二种注入方式：使用有参构造进行注入
+                创建类，定义属性，创建属性对应有参数构造方法
+                再spring配置文件中进行配置
+        (4)p名称空间注入
+            [1]使用p名称空间注入，可以简化基于xml的配置方。实际中用的不多
+                第一步，添加p名称空间在配置文件中 xmlns:p="http://www.springframework.org/schema/p"
+                第二步，进行属性注入，在Bean标签里面进行操作
+
+    IOC操作Bean管理（xml注入其他类型属性）
+        (1)字面量
+           [1]null值
+                <property name="address">
+                    <null/>
+                </property>
+           [2]属性值包含特殊符号
+        (2)注入属性-外部Bean
+            web-service-dao
+            [1]创建两个类service和dao类
+            [2]在service调用dao里面的方法
+            [3]在spring配置文件中进行配置
+        (3)注入属性-内部Bean和级联赋值
+        (2)
