@@ -1,6 +1,7 @@
 package com.hlp.spring5_demon2.factorybean;
 
 import com.hlp.spring5_demon2.collectiontype.Course;
+import javafx.util.Pair;
 import org.springframework.beans.factory.FactoryBean;
 
 /**
@@ -25,4 +26,5 @@ public class MyBean implements FactoryBean<Course> {
     public boolean isSingleton() {
         return FactoryBean.super.isSingleton();
     }
+
 }
