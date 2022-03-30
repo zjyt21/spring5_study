@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--内部bean-->
+    <bean id="emp" class="com.ioc.spring5_demon1.bean.Emp">
+        <property name="eName" value="Lucy"></property>
+        <property name="gender" value="woman"></property>
+        <!--对象类型的属性--><!--这里也可以使用外部bean的方法引入对象类型的属性-->
+        <property name="dept">
+            <bean id="dept" class="com.ioc.spring5_demon1.bean.Dept">
+                <property name="dName" value="安保部"></property>
+            </bean>
+        </property>
+    </bean>
+</beans>

@@ -1,0 +1,5 @@
+JdbcTemplate（概念和准备）
+    1.什么是JdbcTemplate
+        (1)Spring框架对JDBC进行了封装，使用JdbcTemplate方便实现对数据库操作
+    2.准备工作
+        (1)引入相关jar包

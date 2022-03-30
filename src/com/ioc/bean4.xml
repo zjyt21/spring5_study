@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--级联赋值，第一种写法-->
+    <!--<bean id="emp" class="com.ioc.spring5_demon1.bean.Emp">
+        <property name="eName" value="Lucy"></property>
+        <property name="gender" value="woman"></property>
+        &lt;!&ndash;级联赋值&ndash;&gt;
+        <property name="dept" ref="dept"></property>
+    </bean>
+    <bean id="dept" class="com.ioc.spring5_demon1.bean.Dept">
+        <property name="dName" value="财务部"></property>
+    </bean>-->
+
+    <!--级联赋值，第二种写法-->
+    <bean id="emp" class="com.ioc.spring5_demon1.bean.Emp">
+        <property name="eName" value="Lucy"></property>
+        <property name="gender" value="woman"></property>
+        <!--级联赋值-->
+        <property name="dept" ref="dept"></property>
+        <property name="dept.dName" value="技术部"></property><!--此处要在Emp类中设置对应的get方法才行-->
+    </bean>
+    <bean id="dept" class="com.ioc.spring5_demon1.bean.Dept">
+        <property name="dName" value="财务部"></property>
+    </bean>
+</beans>
