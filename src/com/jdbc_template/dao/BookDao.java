@@ -2,6 +2,8 @@ package com.jdbc_template.dao;
 
 import com.jdbc_template.entity.Book;
 
+import java.util.List;
+
 /**
  * @author 韩帅比
  * @create 2022-03-30 22:21
@@ -18,4 +20,14 @@ public interface BookDao {
 
     //查询表中记录条数
     int selectCount();
+
+    Book findBookInfo(String id);
+
+    List<Book> findAllBook();
+
+    void batchAddBook(List<Object[]> batchArgs);
+
+    void batchUpdateBook(List<Object[]> batchArgs);
+
+    void batchDeleteBook(List<Object[]> batchArgs);
 }

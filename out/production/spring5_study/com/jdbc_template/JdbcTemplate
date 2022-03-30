@@ -29,6 +29,24 @@ JdbcTemplate操作数据库（查询返回某个值）
     2.使用JdbcTemplate实现查询某个值的代码
         jdbcTemplate.queryForObject(String sql, Class<T> requiredType);
         有两个参数，第一个参数：sql语句，第二个参数：返回类型Class
+
 JdbcTemplate操作数据库（查询返回对象）
+    1.场景：查询图书详情
+    2.JdbcTemplate实现查询返回对象
+        jdbcTemplate.queryForObject(String sql, RowMapper<T> rowMapper, Object... args);
+        三个参数，第一个：sql语句，第二个：RowMapper是接口，针对要返回的不同类型数据，使用这个接口里面的实现类完成数据封装，
+                 第三个：sql语句的参数的具体值
 
 JdbcTemplate操作数据库（查询返回集合）
+    1.场景：查询图书列表分页...
+    2.调用JdbcTemplate实现查询返回对象
+        jdbcTemplate.query(String sql, RowMapper<T> rowMapper, Object... args);
+
+JdbcTemplate操作数据库（批量操作）
+    1.批量操作：操作表内多条记录
+    2.JdbcTemplate实现批量添加操作
+        batchUpdate(String sql, List<Object[]> batchArgs);
+        有两个参数，第一个参数：sql语句，第二个参数：list集合，添加多条记录的数据
+
+JdbcTemplate操作数据库（批量修改）
+    1.
